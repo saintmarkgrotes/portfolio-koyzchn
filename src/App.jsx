@@ -59,7 +59,7 @@ export default function App() {
       </section>
 
       <footer id="contact" className="flex items-center gap-6 border-t border-border pt-6 text-sm text-muted-foreground">
-        <a href="grotessaintmar@gmail.com" className="flex items-center gap-2 hover:text-foreground"><Mail className="size-4" />Email</a>
+        <a href="grotessaintmark@gmail.com" className="flex items-center gap-2 hover:text-foreground"><Mail className="size-4" />Email</a>
         <a href="https://github.com/saintmarkgrotes" className="flex items-center gap-2 hover:text-foreground"><GithubIcon className="size-4" />GitHub</a>
       </footer>
     </main>
