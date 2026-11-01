@@ -1,5 +1,6 @@
 import { ArrowUpRight, Mail } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
+import FloatingNav from "@/components/floating-nav"
 
 function GithubIcon({ className }) {
   return (
@@ -20,16 +21,11 @@ const projects = [
 
 export default function App() {
   return (
+  <>
+    <FloatingNav/>
     <main className="mx-auto max-w-2xl px-6 py-20">
-      <header className="mb-20 flex items-center justify-between text-sm">
-        <span className="font-medium">Mark Grotes</span>
-        <nav className="flex gap-6 text-muted-foreground">
-          <a href="#work" className="hover:text-foreground transition-colors">Work</a>
-          <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
-        </nav>
-      </header>
 
-      <section className="mb-24">
+      <section id="top" className="mb-24 scroll-mt-24">
         <h1 className="text-4xl font-semibold tracking-tight">
           Full-stack developer building clear, focused tools.
         </h1>
@@ -40,7 +36,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="work" className="mb-24">
+      <section id="work" className="mb-24 scroll-mt-24">
         <h2 className="mb-6 text-xs uppercase tracking-widest text-muted-foreground">Selected work</h2>
         <ul className="divide-y divide-border border-y border-border">
           {projects.map((p) => (
@@ -58,10 +54,11 @@ export default function App() {
         </ul>
       </section>
 
-      <footer id="contact" className="flex items-center gap-6 border-t border-border pt-6 text-sm text-muted-foreground">
+      <footer id="contact" className="scroll-mt-24 flex items-center gap-6 border-t border-border pt-6 text-sm text-muted-foreground">
         <a href="grotessaintmark@gmail.com" className="flex items-center gap-2 hover:text-foreground"><Mail className="size-4" />Email</a>
         <a href="https://github.com/saintmarkgrotes" className="flex items-center gap-2 hover:text-foreground"><GithubIcon className="size-4" />GitHub</a>
       </footer>
     </main>
+  </>
   )
 }
