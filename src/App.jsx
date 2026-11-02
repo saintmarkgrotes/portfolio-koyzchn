@@ -1,6 +1,7 @@
 import { ArrowUpRight, Mail } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import FloatingNav from "@/components/floating-nav"
+import { Badge } from "@/components/ui/badge"
 
 function GithubIcon({ className }) {
   return (
@@ -17,6 +18,13 @@ const projects = [
     stack: "React · Vite · Supabase · FastAPI · Gemini",
     href: "https://si-rebyu.vercel.app",
   },
+]
+
+const stack = [
+  { group: "Frontend", items: ["React", "Vite", "Tailwind CSS", "shadcn/ui"] },
+  { group: "Backend", items: ["Python", "FastAPI", "Supabase"] },
+  { group: "AI", items: ["Gemini API"] },
+  { group: "Tools", items: ["Git", "GitHub", "Vercel"] },
 ]
 
 export default function App() {
@@ -52,6 +60,22 @@ export default function App() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section id="stack" className="mb-24 scroll-mt-24">
+        <h2 className="mb-6 text-xs uppercase tracking-widest text-muted-foreground">Tech stack</h2>
+        <dl className="divide-y divide-border border-y border-border">
+          {stack.map(({ group, items }) => (
+            <div key={group} className="grid gap-3 py-5 sm:grid-cols-[8rem_1fr]">
+              <dt className="text-sm text-muted-foreground">{group}</dt>
+              <dd className="flex flex-wrap gap-2">
+                {items.map((item) => (
+                  <Badge key={item} variant="outline">{item}</Badge>
+                ))}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       <footer id="contact" className="scroll-mt-24 flex items-center gap-6 border-t border-border pt-6 text-sm text-muted-foreground">
