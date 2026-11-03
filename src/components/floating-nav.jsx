@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
+import ThemeToggle from "@/components/theme-toggle"
 
 const links = [
   { id: "top", label: "Home" },
@@ -56,6 +57,8 @@ export default function FloatingNav() {
             {label}
           </a>
         ))}
+        <span className="h-4 w-px bg-border" />
+        <ThemeToggle />
       </div>
     </nav>
   )
