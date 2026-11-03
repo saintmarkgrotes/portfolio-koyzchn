@@ -127,3 +127,10 @@
     @apply font-sans scroll-smooth motion-reduce:scroll-auto;
   }
 }
+
+/* Theme toggle: let the JS clip-path reveal drive the transition */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
