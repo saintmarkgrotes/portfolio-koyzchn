@@ -1,4 +1,6 @@
-import { ArrowUpRight, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
+import Folder from "@/components/folder"
+import { useIsDark } from "@/lib/use-dark"
 import { buttonVariants } from "@/components/ui/button"
 import FloatingNav from "@/components/floating-nav"
 import { Badge } from "@/components/ui/badge"
@@ -20,6 +22,12 @@ const projects = [
   },
 ]
 
+const folderItems = projects.map(({ name, desc, href }) => ({
+  title: name,
+  description: desc,
+  href,
+}))
+
 const stack = [
   { group: "Frontend", items: ["React", "Vite", "Tailwind CSS", "shadcn/ui"] },
   { group: "Backend", items: ["Python", "FastAPI", "Supabase"] },
@@ -28,6 +36,7 @@ const stack = [
 ]
 
 export default function App() {
+  const dark = useIsDark()
   return (
   <>
     <FloatingNav/>
@@ -46,20 +55,21 @@ export default function App() {
 
       <section id="work" className="mb-24 scroll-mt-24">
         <h2 className="mb-6 text-xs uppercase tracking-widest text-muted-foreground">Selected work</h2>
-        <ul className="divide-y divide-border border-y border-border">
-          {projects.map((p) => (
-            <li key={p.name}>
-              <a href={p.href} target="_blank" rel="noreferrer" className="group flex items-start justify-between gap-4 py-6">
-                <div>
-                  <p className="font-medium">{p.name}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{p.desc}</p>
-                  <p className="mt-2 text-xs text-muted-foreground">{p.stack}</p>
-                </div>
-                <ArrowUpRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="flex justify-center overflow-x-clip py-16">
+          <Folder
+            label="Projects"
+            items={folderItems}
+            size={1.15}
+            color={dark ? "#a1a1aa" : "#18181b"}
+            paperColor={dark ? "#fafafa" : "#ffffff"}
+            theme={dark ? "dark" : "light"}
+            zoomOnClick={false}
+            onItemClick={(item) => window.open(item.href, "_blank", "noopener,noreferrer")}
+          />
+        </div>
+        <p className="text-center text-xs text-muted-foreground">
+          Open the folder, then click a page to visit the project.
+        </p>
       </section>
 
       <section id="stack" className="mb-24 scroll-mt-24">
