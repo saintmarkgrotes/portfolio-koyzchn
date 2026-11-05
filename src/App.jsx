@@ -28,6 +28,23 @@ const folderItems = projects.map(({ name, desc, href }) => ({
   href,
 }))
 
+const experience = [
+  {
+    type: "Work",
+    years: "2025 – Present",
+    org: "Company Name",
+    role: "Full-stack Developer",
+    note: "One line on what you built or owned.",
+  },
+  {
+    type: "Education",
+    years: "2021 – 2025",
+    org: "University Name",
+    role: "BS in Computer Science",
+    note: "Honors, thesis topic, or relevant coursework.",
+  },
+]
+
 const stack = [
   { group: "Frontend", items: ["React", "Vite", "Tailwind CSS", "shadcn/ui"] },
   { group: "Backend", items: ["Python", "FastAPI", "Supabase"] },
@@ -86,6 +103,25 @@ export default function App() {
             </div>
           ))}
         </dl>
+      </section>
+
+      <section id="experience" className="mb-24 scroll-mt-24">
+        <h2 className="mb-6 text-xs uppercase tracking-widest text-muted-foreground">Experience</h2>
+        <ul className="divide-y divide-border border-y border-border">
+          {experience.map(({ type, years, org, role, note }) => (
+            <li key={`${org}-${years}`} className="grid gap-1 py-5 sm:grid-cols-[8rem_1fr] sm:gap-3">
+              <p className="text-sm text-muted-foreground">{years}</p>
+              <div>
+                <div className="flex items-center gap-2">
+                  <p className="font-medium">{org}</p>
+                  <Badge variant="outline">{type}</Badge>
+                </div>
+                <p className="text-sm text-muted-foreground">{role}</p>
+                {note && <p className="mt-2 text-xs text-muted-foreground">{note}</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <footer id="contact" className="scroll-mt-24 flex items-center gap-6 border-t border-border pt-6 text-sm text-muted-foreground">

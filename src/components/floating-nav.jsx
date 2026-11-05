@@ -6,6 +6,7 @@ const links = [
   { id: "top", label: "Home" },
   { id: "work", label: "Work" },
   { id: "stack", label: "Stack" },
+  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ]
 
@@ -42,13 +43,14 @@ export default function FloatingNav() {
       <div className="flex items-center gap-1 rounded-full border border-border bg-background/70 p-1 text-sm shadow-sm backdrop-blur-md">
         <span className="hidden px-3 font-medium sm:block">Mark Grotes</span>
         <span className="hidden h-4 w-px bg-border sm:block" />
-        {links.map(({ id, label }) => (
+        {links.map(({ id, label, hideOnMobile }) => (
           <a
             key={id}
             href={`#${id}`}
             aria-current={active === id ? "true" : undefined}
             className={cn(
-              "rounded-full px-3 py-1.5 transition-colors",
+              "rounded-full px-2.5 py-1.5 transition-colors sm:px-3",
+              hideOnMobile && "hidden sm:block",
               active === id
                 ? "bg-foreground text-background"
                 : "text-muted-foreground hover:text-foreground"
