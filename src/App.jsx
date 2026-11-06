@@ -59,11 +59,30 @@ export default function App() {
     <FloatingNav/>
     <main className="mx-auto max-w-2xl px-6 py-20">
 
-      <section id="top" className="mb-24 scroll-mt-24">
+      <section id="top" className="mb-24 scroll-mt-32">
+        <div className="mb-8 size-24 overflow-hidden rounded-full border border-border bg-muted">
+          <img
+            src="/profile.jpg"
+            alt="Portrait of Mark Grotes"
+            className="size-full object-cover grayscale"
+            onError={(e) => {
+              e.currentTarget.style.display = "none"
+            }}
+          />
+        </div>
         <h1 className="text-4xl font-semibold tracking-tight">
           Full-stack developer building clear, focused tools.
         </h1>
-        <p className="mt-4 text-muted-foreground">Calbayog, Philippines.</p>
+        <div className="mt-6 space-y-4 text-muted-foreground">
+          <p>
+            Hi, I’m Saint Mark, a full-stack developer based in Calbayog, Philippines. I like turning messy
+            problems into simple, well-made tools.
+          </p>
+          <p>
+            Recently I built Si Rebyu, an AI study platform that turns documents into flashcards and
+            quizzes. Add a line here about what you’re learning or looking for next.
+          </p>
+        </div>
         <div className="mt-8 flex gap-3">
           <a href="#work" className={buttonVariants()}>View work</a>
           <a href="#contact" className={buttonVariants({ variant: "outline" })}>Get in touch</a>
