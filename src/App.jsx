@@ -68,8 +68,8 @@ export default function App() {
     <main className="mx-auto max-w-2xl px-6 py-20">
 
       <section id="top" className="mb-24 scroll-mt-32">
-        <div className="flex items-center gap-5 sm:gap-6">
-          <div className="size-24 shrink-0 overflow-hidden rounded-lg border border-border bg-muted sm:size-32">
+        <div className="flex items-center gap-5 sm:gap-8">
+          <div className="size-28 shrink-0 overflow-hidden rounded-xl border border-border bg-muted sm:size-44">
             <img
               src="/profile.jpg"
               alt="Portrait of Saint Mark Grotes"
@@ -80,22 +80,22 @@ export default function App() {
             />
           </div>
           <div className="min-w-0">
-            <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight sm:text-4xl">
               Saint Mark Grotes
-              <BadgeCheck className="size-5 shrink-0 sm:size-6" aria-hidden="true" />
+              <BadgeCheck className="size-6 shrink-0 sm:size-8" aria-hidden="true" />
             </h1>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mt-2 text-sm text-muted-foreground sm:text-base">
               Full-stack Development · Web Apps · AI Tools
             </p>
-            <div className="mt-3 flex items-center gap-3 text-muted-foreground">
+            <div className="mt-4 flex items-center gap-4 text-muted-foreground">
               <a href="https://github.com/saintmarkgrotes" aria-label="GitHub" className="transition-colors hover:text-foreground">
-                <GithubIcon className="size-5" />
+                <GithubIcon className="size-6" />
               </a>
-              <a href="https://linkedin.com/in/your-handle" aria-label="LinkedIn" className="transition-colors hover:text-foreground">
-                <LinkedinIcon className="size-5" />
+              <a href="https://www.linkedin.com/in/saintmarkgrotes/" aria-label="LinkedIn" className="transition-colors hover:text-foreground">
+                <LinkedinIcon className="size-6" />
               </a>
-              <a href="mailto:you@email.com" aria-label="Email" className="transition-colors hover:text-foreground">
-                <Mail className="size-5" />
+              <a href="grotessaintmark@gmail.com" aria-label="Email" className="transition-colors hover:text-foreground">
+                <Mail className="size-6" />
               </a>
             </div>
           </div>
