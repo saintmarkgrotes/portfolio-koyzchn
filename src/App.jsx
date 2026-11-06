@@ -88,10 +88,22 @@ export default function App() {
               Full-stack Development · Web Apps · AI Tools
             </p>
             <div className="mt-4 flex items-center gap-4 text-muted-foreground">
-              <a href="https://github.com/saintmarkgrotes" aria-label="GitHub" className="transition-colors hover:text-foreground">
+              <a
+                href="https://github.com/saintmarkgrotes"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="transition-colors hover:text-foreground"
+              >
                 <GithubIcon className="size-6" />
               </a>
-              <a href="https://www.linkedin.com/in/saintmarkgrotes/" aria-label="LinkedIn" className="transition-colors hover:text-foreground">
+              <a
+                href="https://www.linkedin.com/in/saintmarkgrotes/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="transition-colors hover:text-foreground"
+              >
                 <LinkedinIcon className="size-6" />
               </a>
               <a href="grotessaintmark@gmail.com" aria-label="Email" className="transition-colors hover:text-foreground">
@@ -174,7 +186,14 @@ export default function App() {
 
       <footer id="contact" className="scroll-mt-24 flex items-center gap-6 border-t border-border pt-6 text-sm text-muted-foreground">
         <a href="grotessaintmark@gmail.com" className="flex items-center gap-2 hover:text-foreground"><Mail className="size-4" />Email</a>
-        <a href="https://github.com/saintmarkgrotes" className="flex items-center gap-2 hover:text-foreground"><GithubIcon className="size-4" />GitHub</a>
+        <a
+          href="https://github.com/saintmarkgrotes"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-foreground"
+        >
+          <GithubIcon className="size-4" />GitHub
+        </a>
       </footer>
     </main>
   </>
