@@ -3,6 +3,7 @@ import Folder from "@/components/folder"
 import { useIsDark } from "@/lib/use-dark"
 import { buttonVariants } from "@/components/ui/button"
 import FloatingNav from "@/components/floating-nav"
+import GithubActivity from "@/components/github-activity"
 import { Badge } from "@/components/ui/badge"
 
 function GithubIcon({ className }) {
@@ -182,6 +183,11 @@ export default function App() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section id="activity" className="mb-24 scroll-mt-24">
+        <h2 className="mb-6 text-xs uppercase tracking-widest text-muted-foreground">GitHub activity</h2>
+        <GithubActivity />
       </section>
 
       <footer id="contact" className="scroll-mt-24 flex items-center gap-6 border-t border-border pt-6 text-sm text-muted-foreground">
